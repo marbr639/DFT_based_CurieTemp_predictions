@@ -1,4 +1,4 @@
-# DFT Based Predicions for Curie Temperatures
+# DFT Based Predictions for Curie Temperatures
 
 This repository contains all the scripts necessary for setting up and extracting results from **VASP** calculations to predict the Curie temperature of magnetic materials using the **BCPAA-method** developed [Marian Arale Brännvall, Gabriel Persson, Luis Casillas-Trujillo, Rickard Armiento, and Björn Alling, *Predicting the Curie temperature of magnetic materials with automated calculations across chemistries and structures*, Phys. Rev. Materials 8, 114417, 2024.](https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.8.114417)
 
