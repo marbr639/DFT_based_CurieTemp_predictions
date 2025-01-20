@@ -68,7 +68,7 @@ for ind, c in enumerate(mag_configs):
 
     set_magmoms(structure, '', 'array', c['config M_CONSTR'])
 
-    NNList = calc_neighbors(structure, 'POSCAR', tol=1)
+    NNList = calc_neighbors(structure, 'POSCAR', tol=0.1)
 
     if NNList == "NOMAGMOM":
         ssCorr = 1
