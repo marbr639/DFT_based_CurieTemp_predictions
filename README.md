@@ -22,7 +22,8 @@ These scripts are used to prepare the input configurations needed for the VASP c
      - Initial magnetic moment sizes for each species.
      - Example: python get_best_DLM_config.py 48 16 0.5 2.2 ;This will produce MAGMOM and M_CONSTR lines where the first 48 atoms have unconstrained moments.
    - **Functionality**:  
-     - Determines whether the moments for each species are constrained based on their input sizes (less than 0.75 Bohr magnetons = unconstrained).  
+     - Determines whether the moments for each species are constrained based on their input sizes (less than 0.75 Bohr magnetons = unconstrained).
+     - There is a line, NNList = calc_neighbors(structure, 'POSCAR', tol=0.1), which determines between which neighboring atoms to calculate the SRO, the tol determines the radius within which the neighbors are found. This might need to be adjusted, check with get_NN.py where a similr line is found.   
      - Requires access to:  
        - `get_SRO.py`: Calculates the short-range order.  
        - `POSCAR`: Crystal structure information.  
@@ -34,7 +35,7 @@ These scripts are used to prepare the input configurations needed for the VASP c
 These scripts are used to analyze the output from VASP calculations and gather the necessary data for Curie temperature predictions:
 
 1. **`gather_energy_diff.py`**  
-   - **Description**: Extracts the energy of the groudn state and the DLM state respectivelyfrom VASP output files and calculates the energy differences. It also extracts the magnetic moment sizes from the DLM configuration and calculates the magnetic entropy. This is then used to calculate the energy difference divided by the magnetic entropy. The energy difference and the energy difference divided by the magnetic entropy are printed out into a files called energies.
+   - **Description**: Extracts the energy of the ground state and the DLM state respectively from VASP output files and calculates the energy differences. It also extracts the magnetic moment sizes from the DLM configuration and calculates the magnetic entropy. This is then used to calculate the energy difference divided by the magnetic entropy. The energy difference and the energy difference divided by the magnetic entropy are printed out into a files called energies.
 
 2. **`get_NN.py`**  
    - **Description**: Identifies the number of nearest neighbors (NN) in the crystal structure. Prints it into a file called Number_of_nearest_neighbors.
@@ -56,7 +57,7 @@ These scripts are used to analyze the output from VASP calculations and gather t
    - Use `gather_energy_diff.py` and `get_NN.py` to extract the required outputs from VASP calculations.
 
 4. **Predict Curie Temperature**:
-   - Use the extracted data in conjunction with the BCPAA method to predict the Curie temperature.
+   - Use the extracted data in conjunction with the DFT-based method to predict the Curie temperature.
 
 ---
 
@@ -69,5 +70,5 @@ These scripts are used to analyze the output from VASP calculations and gather t
 
 ## Notes
 
-- Ensure all scripts are in the same directory for dependency resolution (e.g., `get_SRO.py`).
+- Ensure all scripts are in the same directory for dependency.
 - Input files (e.g., `POSCAR`, `INCAR`) must follow the VASP standard format.
