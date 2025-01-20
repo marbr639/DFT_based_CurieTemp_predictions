@@ -19,7 +19,8 @@ These scripts are used to prepare the input configurations needed for the VASP c
    - **Description**: Generates a disordered local moment (DLM) configuration with minimized short-range order (SRO).  
    - **Input**:  
      - Number of each species in the crystal.  
-     - Initial magnetic moment sizes for each species.  
+     - Initial magnetic moment sizes for each species.
+     - Example: python get_best_DLM_config.py 48 16 0.5 2.2 ;This will produce MAGMOM and M_CONSTR lines where the first 48 atoms have unconstrained moments.
    - **Functionality**:  
      - Determines whether the moments for each species are constrained based on their input sizes (less than 0.75 Bohr magnetons = unconstrained).  
      - Requires access to:  
