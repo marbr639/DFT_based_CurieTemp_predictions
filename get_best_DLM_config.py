@@ -108,6 +108,5 @@ for m, c in zip(best_config_MAGMOM, best_config_M_CONSTR):
 
 NUNCONSTR_str = str(NUNCONSTR/50)
 
-print(f'MAGMOM: "{MAGMOM_str}"')
-print(f'M_CONSTR: "{M_CONSTR_str}"')
-print(f'NUNCONSTR: "{NUNCONSTR_str}"')
+print(f'MAGMOM = {MAGMOM_str}')
+print(f'M_CONSTR = {M_CONSTR_str}')

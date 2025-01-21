@@ -36,7 +36,7 @@ These scripts are used to prepare the input configurations needed for the VASP c
 These scripts are used to analyze the output from VASP calculations and gather the necessary data for Curie temperature predictions:
 
 1. **`gather_energy_diff.py`**  
-   - **Description**: Extracts the energy of the ground state and the DLM state respectively from VASP output files and calculates the energy differences. It also extracts the magnetic moment sizes from the DLM configuration and calculates the magnetic entropy. This is then used to calculate the energy difference divided by the magnetic entropy. The energy difference and the energy difference divided by the magnetic entropy are printed out into a files called energies.
+   - **Description**: Extracts the energy of the ground state and the DLM state respectively from VASP output files and calculates the energy differences. It also extracts the magnetic moment sizes from the DLM configuration and calculates the magnetic entropy. This is then used to calculate the energy difference divided by the magnetic entropy. The energy difference, the magentic entropy, and the energy difference divided by the magnetic entropy are printed out into a files called energies.
 
 2. **`get_NN.py`**  
    - **Description**: Identifies the number of nearest neighbors (NN) in the crystal structure. Prints it into a file called Number_of_nearest_neighbors.
@@ -44,6 +44,7 @@ These scripts are used to analyze the output from VASP calculations and gather t
      - Requires `get_SRO.py` for short-range order calculations.
 
 ---
+
 
 ## How to Use
 
