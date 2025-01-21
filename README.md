@@ -37,11 +37,17 @@ These scripts are used to analyze the output from VASP calculations and gather t
 
 1. **`gather_energy_diff.py`**  
    - **Description**: Extracts the energy of the ground state and the DLM state respectively from VASP output files and calculates the energy differences. It also extracts the magnetic moment sizes from the DLM configuration and calculates the magnetic entropy. This is then used to calculate the energy difference divided by the magnetic entropy. The energy difference, the magentic entropy, and the energy difference divided by the magnetic entropy are printed out into a files called energies.
+   - **Input**: python gather_energy_diff.py OSZICAR.GS OSZICAR.DLM OUTCAR.GS OUTCAR.DLM POSCAR.GS POSCAR.DLM ; Set the filenames appropriately so that the GS files are the names of the files from the ground-state search and the DLM-files from the final DLM-run. The files must be in the same place as this script.
+   - **Dependencies**:
+     - Requires `gather_mag_final.sh`. Make sure the script is executable!
 
 2. **`get_NN.py`**  
    - **Description**: Identifies the number of nearest neighbors (NN) in the crystal structure. Prints it into a file called Number_of_nearest_neighbors.
+   - **Input**: python get_NN.py POSCAR INCAR ; Set the file names to he POSCAR and INCAR corresponding to the DLM run. The files must be in the same place as this script. 
    - **Dependencies**:  
      - Requires `get_SRO.py` for short-range order calculations.
+     - Requires `gather_mag_final.sh`. Make sure the script is executable!
+       
 
 ---
 
