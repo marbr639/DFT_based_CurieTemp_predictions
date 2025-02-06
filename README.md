@@ -11,7 +11,7 @@ These scripts are used to prepare the input configurations needed for the VASP c
    - **Description**: Generates a random noncollinear magnetic configuration for a crystal.  
    - **Input**:  
      - Number of atoms in the system.
-     - Example: python get_random_magnetic_configuration.py 24 ; will create a MAGMOM line for 24 atoms (all will ahve size 3 Bohr magnetons.
+     - Example: python get_random_magnetic_configuration.py 24 ; will create a MAGMOM line for 24 atoms.
    - **Output**:  
      - A noncollinear magnetic moment configuration where all moments have a size of 3 Bohr magnetons.  
    - **Use Case**: This configuration can be used as input in the `INCAR` file for a ground state search, set the MAGMOM-flag to this configuration.
@@ -71,8 +71,8 @@ These scripts are used to analyze the output from VASP calculations and gather t
 
 ## Dependencies
 
-- Python 3.x
-- VASP (Vienna Ab initio Simulation Package)
+- **Python**: Requires a version **greater than 3.8 but less than 3.12**  
+- **Required Packages**: Listed in [`requirements.txt`](requirements.txt)  
 
 ---
 
