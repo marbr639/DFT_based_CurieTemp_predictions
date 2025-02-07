@@ -23,9 +23,9 @@ b=$(( Natoms+3 ))
 
 
 	
-bzgrep -A $b 'magnetization (x)' $outfile | tail -$Natoms | awk '{print $5}' >mag_x
-bzgrep -A $b 'magnetization (y)' $outfile | tail -$Natoms | awk '{print $5}' >mag_y
-bzgrep -A $b 'magnetization (z)' $outfile | tail -$Natoms | awk '{print $5}' >mag_z
+bzgrep -A $b 'magnetization (x)' $outfile | tail -$Natoms | awk '{print $NF}' >mag_x
+bzgrep -A $b 'magnetization (y)' $outfile | tail -$Natoms | awk '{print $NF}' >mag_y
+bzgrep -A $b 'magnetization (z)' $outfile | tail -$Natoms | awk '{print $NF}' >mag_z
 paste mag_x mag_y mag_z >magmom
 
 awk '{print sqrt($1*$1+$2*$2+$3*$3)}' magmom >> magmom_size
